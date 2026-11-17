@@ -1,0 +1,360 @@
+import os
+import time
+
+slides = [
+    {
+        "title": "*** INTRODUCTION AND HISTORY OF PYTHON ***",
+        "content": """
+Python is a high-level, easy-to-learn programming language.
+It was created by Guido van Rossum and released in 1991.
+
+Python is used for:
+- Web development
+- Artificial intelligence
+- Data analysis
+- Game development
+- Automation
+"""
+    },
+    {
+        "title": "*** PYTHON CODING TOOLS*** ",
+        "content": """
+Coding tools are applications used to write and run Python programs.
+
+Examples:
+1. IDLE
+2. Visual Studio Code
+3. PyCharm
+4. Google Colab
+5. Jupyter Notebook
+
+These tools help programmers create and test Python code.
+"""
+    },
+    {
+        "title": "*** BASIC SYNTAX*** ",
+        "content": """
+Syntax refers to the rules for writing Python code.
+
+Example:
+
+print("Hello, World!")
+
+The print() function displays text on the screen.
+Python uses indentation to organize code.
+"""
+    },
+    {
+        "title": "VARIABLES AND DATA TYPES",
+        "content": """
+Variables store information in a program.
+
+Examples:
+
+name = "Alvin"
+age = 18
+height = 5.7
+is_student = True
+
+Common data types:
+- String: Text
+- Integer: Whole numbers
+- Float: Decimal numbers
+- Boolean: True or False
+"""
+    },
+    {
+        "title": "ARITHMETIC AND RELATIONAL OPERATORS",
+        "content": """
+Arithmetic operators perform mathematical operations.
+
++ Addition
+- Subtraction
+* Multiplication
+/ Division
+% Modulus
+
+Relational operators compare two values.
+
+== Equal to
+!= Not equal to
+> Greater than
+< Less than
+>= Greater than or equal to
+<= Less than or equal to
+"""
+    },
+    {
+        "title": "INPUT AND OUTPUT",
+        "content": """
+Input allows users to enter information.
+Output displays information on the screen.
+
+Example:
+
+name = input("Enter your name: ")
+print("Hello,", name)
+
+input() receives information.
+print() displays information.
+"""
+    },
+    {
+        "title": "CONDITIONAL STATEMENTS",
+        "content": """
+Conditional statements allow a program to make decisions.
+
+Example:
+
+age = 18
+
+if age >= 18:
+    print("You are an adult.")
+else:
+    print("You are a minor.")
+
+Python uses if, elif, and else.
+"""
+    },
+    {
+        "title": "LOOPS AND FUNCTIONS",
+        "content": """
+Loops repeat a block of code.
+
+Example of a for loop:
+
+for number in range(1, 6):
+    print(number)
+
+Functions are reusable blocks of code.
+
+Example:
+
+def greet():
+    print("Hello, everyone!")
+
+greet()
+"""
+    },
+    {
+        "title": "PYTHON LIBRARIES",
+        "content": """
+Libraries contain ready-made code that programmers can use.
+
+Examples:
+- Math: Mathematical operations
+- Random: Random numbers
+- Time: Time-related functions
+- Turtle: Drawing and graphics
+
+Example:
+
+import random
+
+number = random.randint(1, 10)
+print(number)
+"""
+    },
+    {
+        "title": "***SIMPLE CALCULATOR PROJECT***",
+        "content": """
+A calculator performs basic mathematical operations.
+
+Example:
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
+print("Addition:", num1 + num2)
+print("Subtraction:", num1 - num2)
+print("Multiplication:", num1 * num2)
+print("Division:", num1 / num2)
+
+This program demonstrates arithmetic operations.
+"""
+    },
+    {
+        "title": "SUMMARY AND CONCLUSION",
+        "content": """
+Python is a beginner-friendly programming language.
+
+We learned about:
+- Python history and coding tools
+- Basic syntax
+- Variables and data types
+- Operators
+- Input and output
+- Conditional statements
+- Loops and functions
+- Python libraries
+- Calculator project
+
+CONCLUSION:
+
+Learning Python helps us develop new exerience, 
+skills and understand the basics of programming.
+
+THANK YOU FOR LISTENING!
+"""
+    }
+]
+
+def show_presentation():
+    for index, slide in enumerate(slides):
+        os.system("cls" if os.name == "nt" else "clear")
+
+        print("=" * 60)
+        print("             PYTHON PROGRAMMING PRESENTATION")
+        print("=" * 60)
+
+        print(f"\nSLIDE {index + 1}: {slide['title']}")
+        print("-" * 60)
+        print(slide["content"])
+        print("-" * 60)
+
+        if index < len(slides) - 1:
+            input("Press ENTER to continue to the next slide...")
+        else:
+            input("Press ENTER to finish the presentation...")
+
+    print("\nThank you for listening the presentation, now its time for the quiz bee!")
+
+show_presentation()
+
+
+
+
+
+print("===================================")
+print("       PYTHON PROGRAMMING QUIZ Bee ")
+print("===================================")
+
+score = 0
+
+questions = [
+    {
+        "question": "1. Who created Python?",
+        "choices": [
+            "A. Bill Gates",
+            "B. James Gosling",
+            "C. Dennis Ritchie",
+            "D. Guido van Rossum"
+        ],
+        "answer": "D"
+    },
+    {
+        "question": "2. Which function displays text on the screen?",
+        "choices": [
+            "A. print()",
+            "B. input()",
+            "C. int()",
+            "D. type()"
+        ],
+        "answer": "A"
+    },
+    {
+        "question": "3. Which data type stores whole numbers?",
+        "choices": [
+            "A. Integer",
+            "B. String",
+            "C. Boolean",
+            "D. Float"
+        ],
+        "answer": "A"
+    },
+    {
+        "question": "4. Is == used to compare two values in Python?",
+        "choices": [
+            "A. True",
+            "B. False"
+        ],
+        "answer": "A"
+    },
+    {
+        "question": "5. Which keyword is used to define a function?",
+        "choices": [
+            "A. if",
+            "B. def",
+            "C. for",
+            "D. while"
+        ],
+        "answer": "B"
+        
+    }
+]
+
+for q in questions:
+    print("\n" + q["question"])
+
+    for choice in q["choices"]:
+        print(choice)
+
+    answer = input("Your answer: ").upper()
+
+    if answer == q["answer"]:
+        print("Correct! Great job!")
+        score += 1
+    else:
+        print("Wrong answer!")
+        print("Correct answer:", q["answer"])
+
+print("\n===================================")
+print("          QUIZ RESULTS")
+print("===================================")
+
+print("Your score:", score, "out of 5")
+
+if score == 5:
+    print("Excellent! Perfect score!")
+elif score >= 3:
+    print("Good job! Keep practicing!")
+else:
+    print("Keep studying! You can do better!")
+
+print("Thank you for participating!")
+
+
+
+import random
+import time
+
+print("===========================================")
+print("       PYTHON PROGRAMMING PRESENTATION")
+print("===========================================")
+
+print("\nHello everyone!")
+time.sleep(2)
+
+print("Before we end the presentation, let's play a game first!")
+time.sleep(2)
+
+print("\nWELCOME TO THE NUMBER GUESSING GAME!")
+print("Guess the secret number from 1 to 10.")
+print("You have 3 attempts to win!")
+
+secret_number = random.randint(1, 10)
+attempts = 3
+
+while attempts > 0:
+
+    guess = int(input("\nEnter your guess: "))
+
+    if guess == secret_number:
+        print("\nCongratulations! You won!")
+        break
+
+    elif guess < secret_number:
+        print("Too low! Try again.")
+
+    else:
+        print("Too high! Try again.")
+
+    attempts -= 1
+
+if attempts == 0 and guess != secret_number:
+    print("\nGame Over!")
+    print("The correct number was:", secret_number)
+
+print("\n========================================")
+print("Thank you for playing!")
+print("========================================")
